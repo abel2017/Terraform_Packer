@@ -1,0 +1,86 @@
+amazon-ebs output will be in this color.
+
+==> amazon-ebs: Prevalidating AMI Name: packer-terraform 1561038581
+    amazon-ebs: Found Image ID: ami-0862aabda3fb488b5
+==> amazon-ebs: Creating temporary keypair: packer_5d0b8ef7-d8e4-19a4-391b-b8cf5fc16bd9
+==> amazon-ebs: Creating temporary security group for this instance: packer_5d0b8efa-a032-33fa-290b-cd86c5c48d12
+==> amazon-ebs: Authorizing access to port 22 from [0.0.0.0/0] in the temporary security groups...
+==> amazon-ebs: Launching a source AWS instance...
+==> amazon-ebs: Adding tags to source instance
+    amazon-ebs: Adding tag: "Name": "Packer Builder"
+    amazon-ebs: Instance ID: i-0a2a0383e699e7fca
+==> amazon-ebs: Waiting for instance (i-0a2a0383e699e7fca) to become ready...
+==> amazon-ebs: Using ssh communicator to connect: 63.33.195.228
+==> amazon-ebs: Waiting for SSH to become available...
+==> amazon-ebs: Connected to SSH!
+==> amazon-ebs: Pausing 10s before the next provisioner...
+==> amazon-ebs: Provisioning with shell script: install_nginx.sh
+    amazon-ebs: Loaded plugins: priorities, update-motd, upgrade-helper
+    amazon-ebs: No packages marked for update
+    amazon-ebs: Loaded plugins: priorities, update-motd, upgrade-helper
+    amazon-ebs: Resolving Dependencies
+    amazon-ebs: --> Running transaction check
+    amazon-ebs: ---> Package nginx.x86_64 1:1.14.1-2.34.amzn1 will be installed
+    amazon-ebs: --> Processing Dependency: libprofiler.so.0()(64bit) for package: 1:nginx-1.14.1-2.34.amzn1.x86_64
+    amazon-ebs: --> Running transaction check
+    amazon-ebs: ---> Package gperftools-libs.x86_64 0:2.0-11.5.amzn1 will be installed
+    amazon-ebs: --> Processing Dependency: libunwind.so.8()(64bit) for package: gperftools-libs-2.0-11.5.amzn1.x86_64
+    amazon-ebs: --> Running transaction check
+    amazon-ebs: ---> Package libunwind.x86_64 0:1.1-10.8.amzn1 will be installed
+    amazon-ebs: --> Finished Dependency Resolution
+    amazon-ebs:
+    amazon-ebs: Dependencies Resolved
+    amazon-ebs:
+    amazon-ebs: ================================================================================
+    amazon-ebs:  Package             Arch       Version                  Repository        Size
+    amazon-ebs: ================================================================================
+    amazon-ebs: Installing:
+    amazon-ebs:  nginx               x86_64     1:1.14.1-2.34.amzn1      amzn-updates     585 k
+    amazon-ebs: Installing for dependencies:
+    amazon-ebs:  gperftools-libs     x86_64     2.0-11.5.amzn1           amzn-main        570 k
+    amazon-ebs:  libunwind           x86_64     1.1-10.8.amzn1           amzn-main         72 k
+    amazon-ebs:
+    amazon-ebs: Transaction Summary
+    amazon-ebs: ================================================================================
+    amazon-ebs: Install  1 Package (+2 Dependent packages)
+    amazon-ebs:
+    amazon-ebs: Total download size: 1.2 M
+    amazon-ebs: Installed size: 2.9 M
+    amazon-ebs: Downloading packages:
+    amazon-ebs: --------------------------------------------------------------------------------
+    amazon-ebs: Total                                              3.8 MB/s | 1.2 MB  00:00
+    amazon-ebs: Running transaction check
+    amazon-ebs: Running transaction test
+    amazon-ebs: Transaction test succeeded
+    amazon-ebs: Running transaction
+    amazon-ebs:   Installing : libunwind-1.1-10.8.amzn1.x86_64                              1/3
+    amazon-ebs:   Installing : gperftools-libs-2.0-11.5.amzn1.x86_64                        2/3
+    amazon-ebs:   Installing : 1:nginx-1.14.1-2.34.amzn1.x86_64                             3/3
+    amazon-ebs:   Verifying  : libunwind-1.1-10.8.amzn1.x86_64                              1/3
+    amazon-ebs:   Verifying  : gperftools-libs-2.0-11.5.amzn1.x86_64                        2/3
+    amazon-ebs:   Verifying  : 1:nginx-1.14.1-2.34.amzn1.x86_64                             3/3
+    amazon-ebs:
+    amazon-ebs: Installed:
+    amazon-ebs:   nginx.x86_64 1:1.14.1-2.34.amzn1
+    amazon-ebs:
+    amazon-ebs: Dependency Installed:
+    amazon-ebs:   gperftools-libs.x86_64 0:2.0-11.5.amzn1   libunwind.x86_64 0:1.1-10.8.amzn1
+    amazon-ebs:
+    amazon-ebs: Complete!
+==> amazon-ebs: Stopping the source instance...
+    amazon-ebs: Stopping instance
+==> amazon-ebs: Waiting for the instance to stop...
+==> amazon-ebs: Creating AMI packer-terraform 1561038581 from instance i-0a2a0383e699e7fca
+    amazon-ebs: AMI: ami-00a6d8d7a911c4b5f
+==> amazon-ebs: Waiting for AMI to become ready...
+==> amazon-ebs: Terminating the source AWS instance...
+==> amazon-ebs: Cleaning up any extra volumes...
+==> amazon-ebs: No volumes to clean up, skipping
+==> amazon-ebs: Deleting temporary security group...
+==> amazon-ebs: Deleting temporary keypair...
+Build 'amazon-ebs' finished.
+
+==> Builds finished. The artifacts of successful builds are:
+--> amazon-ebs: AMIs were created:
+eu-west-1: ami-00a6d8d7a911c4b5f
+
